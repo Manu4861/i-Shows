@@ -1,0 +1,343 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+:root{
+    --primary-color : #6C45E0;
+    --secondary-color:#4C29AE;
+    --btn-bgcolor:#34188A;
+    --btn-color:#FEFEFE;
+    --part-primary:#FFFAFA;
+    --part-secondary:#B6A3F2;
+    --primary-text:#1D0566;
+    --secondary-text:#524774;
+    --nav-bar-height:60px;
+    --gradient-c1:rgba(124,78,255,0.88);
+    --gradient-c2:rgba(124,78,255,0.01);
+}
+
+body{
+    background: var(--primary-color);
+}
+
+
+
+.devider{
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.container{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/*nav bar styles*/
+nav{
+    width: 100vw;
+    position: fixed;
+    top:0;
+    right: 0;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 200;
+    
+}
+.container-nav{
+    height: var(--nav-bar-height);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding:0px 45px;
+    
+}
+.brand{
+    flex:2.5;
+    position: relative;
+}
+
+.brand h3 {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+.list{
+    flex:1;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.list a{
+    text-decoration: none;
+}
+.list-item{
+    cursor: pointer;
+    height: var(--nav-bar-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list span{
+    font-size: 17px;
+    color:var(--part-secondary);
+    font-weight: 550;
+}
+
+.list .active span{
+    color:var(--part-primary);
+}
+.list .active{
+    border-bottom: 3px solid var(--part-primary);
+}
+
+
+/* slider */
+.slider-container{
+    width: 100vw;
+    height: 100vh;
+    padding-top: var(--nav-bar-height);
+    position: relative;
+}
+
+.gradient-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    background: linear-gradient(var(--gradient-c2),var(--gradient-c1));
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0px 45px;
+    z-index: 100;
+}
+.wallpaper-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.roller{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.3s linear;
+}
+.wallpaper-container .sub-wall{
+    width: 100vw;
+    height: 100%;
+}
+
+.wallpaper-container .sub-wall img{
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+}
+.row{
+    flex:0.3;
+    color:white;
+    padding-top: 15%;
+    display: flex;
+    flex-direction: row;
+}
+.desc-container{
+    flex: 1;
+}
+.btn-container{
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.action-btn{
+    cursor: pointer;
+    height: 40%;
+    font-size: 20px;
+    padding: 3% 7%;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    background: var(--btn-bgcolor);
+    color: var(--btn-color);
+    transition: transform 0.2s linear;
+    text-decoration: none;
+}
+.action-btn:hover{
+    transform: scale(1.05);
+}
+.row .show-title{
+    font-size: 28px;
+    font-weight: 550;
+    padding: 1% 0;
+}
+
+.row .show-desc{
+    font-size: 17px;
+    max-width: 50%;
+    max-height: 20;
+    max-lines: 2;
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    padding: 1% 0;
+}
+.pointers-row{
+    flex:0.04;
+    justify-content: center;
+    align-items: center;
+}
+
+.point-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2%;
+}
+
+.point{
+    width: 10px;
+    height: 10px;
+    margin: 0px 5px;
+    background: var(--part-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform .4s ease-in-out;
+}
+.point-container .active{
+    background-color: var(--part-primary);
+}
+
+.handlers{
+    flex:0.08;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.handlers #prev,.handlers #next{
+    font-size: 35px;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.handlers #prev:hover{
+    opacity: 0.9;
+}
+
+.handlers #next:hover{
+    opacity: 0.9;
+}
+
+main{
+    width:100%;
+    background-color:transparent;
+    height: 100vh;
+    display: block;
+    padding-top: 10%;
+}
+.card-container{
+   width: 100%;
+   height: 100%; 
+   background: #fff;
+   display: flex;
+   flex-direction: column;
+}
+.head{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 0%;
+}
+.head h4{
+    font-size: 30px;
+    color: var(--primary-text);
+}
+.show-cards{
+    flex: 8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 10%;
+}
+.card{
+    background: white;
+    width: 35%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--secondary-text);
+    border-radius: 5px;
+    padding: 0% 3%;
+}
+
+.sub-header{
+    font-size: 21px;
+    flex: 1;
+    color: var(--primary-text);
+    padding: 2%x 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+.fetures{
+    flex: 3;
+    padding: 0px 10px 0px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.fetures ul li{
+   font-size: 18px;
+   font-weight: bold;
+   padding: 5% 0%;
+   color: var(--secondary-text);
+   text-align: left;
+}
+.fe-btn{
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    padding: 1% 1% !important;
+}
+.fe-btn-ac{
+    width: 100%;
+    height: 70%;
+    font-size: 20px;
+    padding: 15px 60px;
+    border-radius: 5px;
+}
+
+
+footer{
+    width:100%;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h3{
+    color: white;
+    font-size: 18px;
+}
